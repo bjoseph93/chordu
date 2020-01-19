@@ -18,10 +18,13 @@ const ChoreBoard = () => {
   const [household, setHousehold] = useState("")
 
 
-  db.ref("/households").once('value', (snapshot) => {
-    setHousehold(snapshot.val()[0].name)
-    setHousemates(snapshot.val()[0].housemates)
-  })
+  useEffect(() => {
+    db.ref("/households").once('value', (snapshot) => {
+      setHousehold(snapshot.val()[0].name)
+      setHousemates(snapshot.val()[0].housemates)
+    })
+  }, [])
+
 
   const handleCardPress = () => {
     setModalVisible(true)
