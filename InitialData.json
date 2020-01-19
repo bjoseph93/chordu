@@ -1,0 +1,37 @@
+{
+  "households": [
+    {
+      "name": "Goat House",
+      "housemates": [
+        {
+          "name": "Jamie",
+          "chores": [
+            "sweep",
+            "mail"
+          ]
+        },
+        {
+          "name": "Giovanna",
+          "chores": [
+            "dishes",
+            "recycle"
+          ]
+        },
+        {
+          "name": "Ben",
+          "chores": [
+            "toilet",
+            "water-plants"
+          ]
+        },
+        {
+          "name": "Smeagol",
+          "chores": [
+            "trash",
+            "counters"
+          ]
+        }
+      ]
+    }
+  ]
+}
