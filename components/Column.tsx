@@ -5,21 +5,22 @@ import Card from './Card'
 
 type ColumnProps = {
   housemate: object;
-  onCardPress: () => void;
+  onCardPress: (chore) => void;
 }
 
 const Column = (props: ColumnProps) => {
+  // console.log(housemate)
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{props.housemate.name.charAt(0)}</Text>
       <View style={{alignItems: 'center'}}>
         {
-        props.housemate.chores.map((chore) => {
+        Object.values(props.housemate.chores).map((chore) => {
           // console.log( props.housemate.chores)
 
           return (
             <View style={styles.cardContainer}>
-              <Card chore={chore} onPress={props.onCardPress}/>
+              <Card chore={chore.name} onPress={() => props.onCardPress(chore)}/>
             </View>
           )
 

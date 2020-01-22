@@ -1,37 +1,53 @@
 {
-  "households": [
-    {
-      "name": "Goat House",
-      "housemates": [
-        {
-          "name": "Jamie",
-          "chores": [
-            "sweep",
-            "mail"
-          ]
+  "households" : {
+    "-Lz3eOHfQ07DdDj4A8d3" : {
+      "housemates" : {
+        "-Lz3hw0je0VhulKPW6Q8" : {
+          "chores" : {
+            "-Lz3jAxhekKiyGjV4P_r" : {
+              "name" : "sweep"
+            },
+            "-Lz3jN0RD48ShISnooiS" : {
+              "name" : "mail"
+            }
+          },
+          "name" : "Sam"
         },
-        {
-          "name": "Giovanna",
-          "chores": [
-            "dishes",
-            "recycle"
-          ]
+        "-Lz3i7q7bJ7Ccrq7gqOM" : {
+          "chores" : {
+            "-Lz3kTOOth1YuI6KZ7bD" : {
+              "name" : "dishes"
+            },
+            "-Lz3k_dJA2B5HUG-kg8_" : {
+              "name" : "recycle"
+            }
+          },
+          "name" : "Giovanna"
         },
-        {
-          "name": "Ben",
-          "chores": [
-            "toilet",
-            "water-plants"
-          ]
+        "-Lz3i9Li6_zKjBozLgjo" : {
+          "chores" : {
+            "-Lz3ksKPLv9lkYKyThgD" : {
+              "name" : "toilet"
+            },
+            "-Lz3kv96VFnnDnofQ918" : {
+              "name" : "water-plants"
+            }
+          },
+          "name" : "Ben"
         },
-        {
-          "name": "Smeagol",
-          "chores": [
-            "trash",
-            "counters"
-          ]
+        "-Lz3iAfPQgeGQaIz2-Xo" : {
+          "chores" : {
+            "-Lz3l8behdbudV60JSC6" : {
+              "name" : "trash"
+            },
+            "-Lz3lGFWKjBH_3gWH3j_" : {
+              "name" : "counters"
+            }
+          },
+          "name" : "Smeagol"
         }
-      ]
+      },
+      "name" : "Goat House"
     }
-  ]
+  }
 }

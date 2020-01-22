@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import Modal from "react-native-modal";
 
@@ -15,32 +15,48 @@ type ChoreBoardState = {
 const ChoreBoard = () => {
   const [housemates, setHousemates] = useState([])
   const [modalVisilbe, setModalVisible] = useState(false)
-  const [household, setHousehold] = useState("")
+  const [household, setHousehold] = useState("");
+  const [selectedChore, setSelectedChore] = useState(null)
 
 
   useEffect(() => {
-    db.ref("/households").once('value', (snapshot) => {
-      setHousehold(snapshot.val()[0].name)
-      setHousemates(snapshot.val()[0].housemates)
+    db.ref("/households/-Lz3eOHfQ07DdDj4A8d3/housemates").once('value', (snapshot) => {
+      // console.log(snapshot)
+      // setHousehold(snapshot.val()[0].name)
+      // console.log(snapshot.val())
+      setHousemates(Object.values(snapshot.val()))
+    })
+
+    db.ref("/households/-Lz3eOHfQ07DdDj4A8d3/name").once('value', (snapshot) => {
+      // console.log(snapshot)
+      setHousehold(snapshot.val().name)
     })
   }, [])
 
 
-  const handleCardPress = () => {
+  const handleCardPress = (chore) => {
+    setSelectedChore(chore)
     setModalVisible(true)
   }
 
+const handleChoreComplete = () => {
 
+
+}
+// console.log(selectedChore)
+// console.log(housemates)
   return (
     <View>
       <Modal isVisible={modalVisilbe} onSwipeComplete={() => setModalVisible(false)} swipeDirection="down">
         <View style={styles.modal}>
           <Text>Hey</Text>
+          <TouchableOpacity onPress={handleChoreComplete}><Text>Chore complete</Text></TouchableOpacity>
         </View>
       </Modal>
   <View style={styles.header}><Text style={styles.headerTitle}>{household}</Text></View>
       <View style={styles.columnContainer}>
         {housemates.map((housemate, index) => {
+          console.log(housemate)
           return (
             <>
               <Column housemate={housemate} onCardPress={handleCardPress}/>
